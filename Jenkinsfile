@@ -18,6 +18,13 @@ pipeline {
         checkout scm
       }
     }
+    stage('Startup') {
+      steps {
+        script {
+          sh 'npm install'
+        }
+      }
+    }
     stage('Test') {
       steps {
         sh 'npm run test'
