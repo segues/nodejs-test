@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "mocha",
+    "test": "jest --coverage --coverageDirectory=output/coverage/jest",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha --dir ./reports/coverage"
   },
   "author": "Alicia <alicia@aliciasykes.com> (http://aliciasykes.com)",
@@ -13,6 +13,7 @@
     "chai": "^4.1.2",
     "coffee-script": "^1.12.7",
     "istanbul": "^1.1.0-alpha.1",
+    "jest": "27.2.5",
     "mocha": "^4.0.1",
     "mochawesome": "^3.0.0",
     "mockery": "^2.1.0",
@@ -22,5 +23,11 @@
     "colors": "^1.1.2",
     "command-line-args": "^4.0.7",
     "request": "^2.83.0"
+  },
+  "jest": {
+    "coverageReporters": [
+      "text",
+      "cobertura"
+    ]
   }
 }
